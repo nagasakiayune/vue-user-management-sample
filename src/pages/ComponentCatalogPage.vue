@@ -37,10 +37,17 @@
     <div class="catalog-selection">
       <div class="catalog-items">
         <h2 class="text-2xl font-bold">3. BaseInput</h2>
-        <div class="mt-2">
+        <div class="input-group mt-2">
           <BaseInput
             label="ユーザー名"
             placeholder="ユーザー名を入力してください"
+          />
+        </div>
+        <div class="input-group">
+          <BaseInput
+            label="アイコン付き"
+            placeholder="ユーザー名を入力してください"
+            icon="search"
           />
         </div>
       </div>
@@ -79,7 +86,7 @@
     <!-- // BaseTable -->
     <div class="catalog-selection">
       <div class="catalog-items">
-        <h2 class="text-2xl font-bold">7. BaseTable</h2>
+        <h2 class="text-2xl font-bold">6. BaseTable</h2>
         <BaseTable :fields="fields" :items="usersMock" />
       </div>
     </div>
@@ -87,7 +94,7 @@
     <!-- // ConfirmDialog -->
     <div class="catalog-selection">
       <div class="catalog-items">
-        <h2 class="text-2xl font-bold">8. ConfirmDialog</h2>
+        <h2 class="text-2xl font-bold">7. ConfirmDialog</h2>
         <div class="mt-2">
           <BaseButton label="確認ダイアログ表示" @click="showDialog = true" />
           <ConfirmDialog
@@ -106,7 +113,7 @@
     <!-- // PageHeader -->
     <div class="catalog-selection">
       <div class="catalog-items">
-        <h2 class="text-2xl font-bold">7. PageHeader</h2>
+        <h2 class="text-2xl font-bold">8. PageHeader</h2>
         <div class="mt-2">
           <PageHeader
             title="ページタイトル"
@@ -190,6 +197,9 @@ export default {
 .button-group {
   display: flex;
   gap: 12px;
+  margin-bottom: 16px;
+}
+.input-group {
   margin-bottom: 16px;
 }
 .button-label {
