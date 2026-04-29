@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import ComponentCatalogPage from "@/pages/ComponentCatalogPage.vue";
+import UserIndexPage from "@/pages/users/index.vue";
 
 Vue.use(VueRouter);
 
@@ -24,6 +25,11 @@ const routes = [
     path: "/catalog",
     name: "ComponentCatalog",
     component: ComponentCatalogPage,
+  },
+  {
+    path: "/users",
+    name: "UserIndexPage",
+    component: UserIndexPage,
   },
 ];
 
