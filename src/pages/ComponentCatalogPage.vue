@@ -79,7 +79,7 @@
     <!-- // BaseTable -->
     <div class="catalog-selection">
       <div class="catalog-items">
-        <h2 class="text-2xl font-bold">6. BaseTable</h2>
+        <h2 class="text-2xl font-bold">7. BaseTable</h2>
         <BaseTable :fields="fields" :items="usersMock" />
       </div>
     </div>
@@ -87,7 +87,7 @@
     <!-- // ConfirmDialog -->
     <div class="catalog-selection">
       <div class="catalog-items">
-        <h2 class="text-2xl font-bold">6. ConfirmDialog</h2>
+        <h2 class="text-2xl font-bold">8. ConfirmDialog</h2>
         <div class="mt-2">
           <BaseButton label="確認ダイアログ表示" @click="showDialog = true" />
           <ConfirmDialog
