@@ -2,7 +2,7 @@
   <div class="user-index">
     <div class="page-header">
       <PageHeader title="ユーザー一覧" />
-      <BaseButton label="新規ユーザー登録" />
+      <BaseButton label="新規ユーザー登録" icon="plus" />
     </div>
 
     <!-- フィルターセクション -->
