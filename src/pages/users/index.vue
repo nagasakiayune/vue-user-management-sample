@@ -7,10 +7,17 @@
 
     <!-- フィルターセクション -->
     <div class="filter-section">
+      <!-- 名前で検索 -->
       <div class="filter-item filter-name">
         <label class="filter-label">名前で検索</label>
-        <BaseInput v-model="searchName" placeholder="名前を入力してください" />
+        <BaseInput
+          v-model="searchName"
+          placeholder="名前を入力してください"
+          icon="search"
+        />
       </div>
+
+      <!-- 在籍状況で検索 -->
       <div class="filter-item">
         <label class="filter-label">在籍状況</label>
         <div class="checkbox-group">
@@ -18,6 +25,8 @@
           <BaseCheckbox v-model="employmentStatus.retired" label="退職" />
         </div>
       </div>
+
+      <!-- 所属部署で検索 -->
       <div class="filter-item">
         <label class="filter-label">所属部署</label>
         <BaseSelect
@@ -26,6 +35,8 @@
           :options="departments"
         />
       </div>
+
+      <!-- フィルタークリア -->
       <div class="filter-item">
         <div class="filter-label"></div>
         <div class="button-group">
