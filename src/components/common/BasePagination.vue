@@ -5,7 +5,7 @@
       :disabled="currentPage === 1"
       @click="changePage(currentPage - 1)"
     >
-      前へ
+      ＜
     </button>
 
     <button
@@ -23,7 +23,7 @@
       :disabled="currentPage === totalPages"
       @click="changePage(currentPage + 1)"
     >
-      次へ
+      ＞
     </button>
   </div>
 </template>
@@ -66,7 +66,7 @@ export default {
   height: 36px;
   padding: 0 12px;
 
-  border: 1px solid #d1d5db;
+  border: none;
   border-radius: 6px;
 
   background: white;
