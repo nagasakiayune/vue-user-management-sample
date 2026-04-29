@@ -69,6 +69,7 @@ export default {
 
 <style scoped>
 .base-input {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -82,6 +83,7 @@ export default {
 
 .base-input__wrapper {
   position: relative;
+  width: 100%;
 }
 
 /* アイコン */
@@ -93,21 +95,26 @@ export default {
   display: flex;
   align-items: center;
   pointer-events: none;
+
+  width: 16px;
+  height: 16px;
 }
 
+/* input */
 .base-input__field {
   width: 100%;
   height: 40px;
   padding: 0 12px;
+  box-sizing: border-box;
   border: 1px solid #d1d5db;
   border-radius: 6px;
   font-size: 14px;
   outline: none;
 }
 
-/* アイコンありのとき余白追加 */
+/* アイコンありのとき */
 .base-input__field.has-icon {
-  padding-left: 36px;
+  padding-left: calc(12px + 16px + 8px);
 }
 
 .base-input__field:focus {
