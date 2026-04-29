@@ -10,8 +10,14 @@
       <div class="catalog-items">
         <h2 class="text-2xl font-bold">1. BaseButton</h2>
         <div class="mt-2 button-group">
+          <label class="button-label">デフォルト</label>
           <BaseButton label="キャンセル" type="secondary" />
           <BaseButton label="保存" @click="save" />
+        </div>
+        <div class="mt-2 button-group">
+          <label class="button-label">アイコン付き</label>
+          <BaseButton label="追加" icon="plus" type="secondary" />
+          <BaseButton label="検索" icon="search" />
         </div>
       </div>
     </div>
@@ -40,10 +46,23 @@
       </div>
     </div>
 
+    <!-- // BasePagination -->
+    <div class="catalog-selection">
+      <div class="catalog-items">
+        <h2 class="text-2xl font-bold">4. BasePagination</h2>
+
+        <BasePagination
+          :current-page="page"
+          :total-pages="5"
+          @change="page = $event"
+        />
+      </div>
+    </div>
+
     <!-- // BaseSelect -->
     <div class="catalog-selection">
       <div class="catalog-items">
-        <h2 class="text-2xl font-bold">4. BaseSelect</h2>
+        <h2 class="text-2xl font-bold">5. BaseSelect</h2>
         <div class="mt-2">
           <BaseSelect
             label="役割"
@@ -57,16 +76,11 @@
       </div>
     </div>
 
-    <!-- // BasePagination -->
+    <!-- // BaseTable -->
     <div class="catalog-selection">
       <div class="catalog-items">
-        <h2 class="text-2xl font-bold">5. BasePagination</h2>
-
-        <BasePagination
-          :current-page="page"
-          :total-pages="5"
-          @change="page = $event"
-        />
+        <h2 class="text-2xl font-bold">6. BaseTable</h2>
+        <BaseTable :fields="fields" :items="usersMock" />
       </div>
     </div>
 
@@ -112,6 +126,7 @@ import BaseSelect from "../components/common/BaseSelect.vue";
 import BaseInput from "../components/common/BaseInput.vue";
 import ConfirmDialog from "@/components/common/ConfirmDialog.vue";
 import PageHeader from "@/components/common/PageHeader.vue";
+import BaseTable from "@/components/common/BaseTable.vue";
 
 export default {
   data() {
@@ -125,6 +140,19 @@ export default {
 
       // BasePaginationの現在のページ
       page: 1,
+
+      // BaseTableのテーブル定義
+      fields: [
+        { key: "id", label: "ID" },
+        { key: "name", label: "名前" },
+        { key: "email", label: "メールアドレス" },
+      ],
+      // BaseTableのテーブルデータ
+      usersMock: [
+        { id: 1, name: "山田太郎", email: "taro.yamada@example.com" },
+        { id: 2, name: "鈴木花子", email: "hanako.suzuki@example.com" },
+        { id: 3, name: "佐藤次郎", email: "jiro.sato@example.com" },
+      ],
     };
   },
   components: {
@@ -135,6 +163,7 @@ export default {
     ConfirmDialog,
     PageHeader,
     BasePagination,
+    BaseTable,
   },
   methods: {
     save() {
@@ -161,5 +190,9 @@ export default {
 .button-group {
   display: flex;
   gap: 12px;
+  margin-bottom: 16px;
+}
+.button-label {
+  width: 100px;
 }
 </style>
