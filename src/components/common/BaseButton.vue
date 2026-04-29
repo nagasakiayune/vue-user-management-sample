@@ -5,13 +5,24 @@
     :disabled="disabled"
     @click="handleClick"
   >
+    <span v-if="icon" class="base-button__icon">
+      <SearchIcon v-if="icon === 'search'" />
+      <PlusIcon v-else-if="icon === 'plus'" />
+    </span>
     {{ label }}
   </button>
 </template>
 
 <script>
+import SearchIcon from "@/components/icons/SearchIcon.vue";
+import PlusIcon from "../icons/PlusIcon.vue";
+
 export default {
   name: "BaseButton",
+  components: {
+    SearchIcon,
+    PlusIcon,
+  },
   props: {
     label: {
       type: String,
@@ -24,6 +35,10 @@ export default {
     disabled: {
       type: Boolean,
       default: false,
+    },
+    icon: {
+      type: String,
+      default: "",
     },
   },
   computed: {
@@ -42,6 +57,10 @@ export default {
 
 <style scoped>
 .base-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   min-width: 120px;
   height: 40px;
   padding: 0 16px;
@@ -50,6 +69,10 @@ export default {
   font-size: 14px;
   cursor: pointer;
   transition: 0.2s;
+}
+.base-button__icon {
+  display: flex;
+  align-items: center;
 }
 
 /* Primary */
